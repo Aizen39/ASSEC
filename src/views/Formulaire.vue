@@ -10,6 +10,78 @@
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
+                  <h1>Périodes</h1>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" lg="6">
+                  <v-menu
+                    ref="menu1"
+                    v-model="menu1"
+                    :close-on-content-click="false"
+                    transition="scale-transition"
+                    offset-y
+                    max-width="290px"
+                    min-width="auto"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-text-field
+                        v-model="dateFormatted"
+                        label="Date"
+                        hint="MM/DD/YYYY format"
+                        persistent-hint
+                        prepend-icon="mdi-calendar"
+                        v-bind="attrs"
+                        @blur="date = parseDate(dateFormatted)"
+                        v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker
+                      v-model="date"
+                      no-title
+                      @input="menu1 = false"
+                    ></v-date-picker>
+                  </v-menu>
+              
+                </v-col>
+
+                <v-col cols="12" lg="6">
+                  <v-menu
+                    v-model="menu2"
+                    :close-on-content-click="false"
+                    transition="scale-transition"
+                    offset-y
+                    max-width="290px"
+                    min-width="auto"
+                  >
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-text-field
+                        v-model="computedDateFormatted"
+                        label="Date (read only text field)"
+                        hint="MM/DD/YYYY format"
+                        persistent-hint
+                        prepend-icon="mdi-calendar"
+                        readonly
+                        v-bind="attrs"
+                        v-on="on"
+                      ></v-text-field>
+                    </template>
+                    <v-date-picker
+                      v-model="date"
+                      no-title
+                      @input="menu2 = false"
+                    ></v-date-picker>
+                  </v-menu>
+                 
+                </v-col>
+              </v-row>
+            </v-container>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
                   <h1>Élevage</h1>
                 </v-col>
               </v-row>
@@ -344,12 +416,7 @@
                 </v-col>
 
                 <v-col cols="12" sm="6">
-                  <v-text-field 
-                  outlined 
-                  dense
-                  suffix="L/jour"
-                  > 
-                  </v-text-field>
+                  <v-text-field outlined dense suffix="L/jour"> </v-text-field>
                 </v-col>
               </v-row>
             </v-container>
@@ -374,6 +441,8 @@ export default {
       temp: (value) =>
         value < 25 || "La température ne doit pas être supérieure 25°C",
     },
+    
+    
 
     textarea: false,
     eauprofond: false,
