@@ -32,6 +32,12 @@ const routes = [
     name: 'DashBoard',
     component: () => import(/* webpackChunkName: "DashBoard" */ '../views/DashBoard.vue')
   },
+  {
+    path: '/recommendation',
+    name: 'Recommendation',
+    component: () => import(/* webpackChunkName: "Recommendation" */ '../views/Recommendation.vue')
+  }
+
 ]
 
 const router = new VueRouter({
