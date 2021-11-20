@@ -7,16 +7,17 @@
             <v-toolbar-title>Formulaire d'évaluation</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
-            <v-container>
-              <v-row>
-                <v-col cols="12" sm="6">
-                  <h1>Période</h1>
-                </v-col>
-              </v-row>
-            </v-container>
+            
 
             <v-row>
-              <v-col cols="6" sm="6" md="4">
+              <v-container>
+      
+                <v-col cols="1" sm="6">
+                  <h1>Période</h1>
+                </v-col>
+              
+            </v-container>
+              <v-col cols="4" sm="6" md="4">
                 <v-menu
                   ref="menu"
                   v-model="menu"
@@ -50,7 +51,7 @@
               </v-col>
 
               <v-spacer></v-spacer>
-              <v-col cols="6" sm="6" md="4">
+              <v-col cols="7" sm="6" md="4">
                 <v-dialog
                   ref="dialog"
                   v-model="modal"
@@ -84,9 +85,6 @@
                   </v-date-picker>
                 </v-dialog>
               </v-col>
-
-              
-              
             </v-row>
 
             <v-container>
@@ -283,15 +281,15 @@
                 </v-col>
 
                 <v-radio-group v-model="row" row>
-                  <v-col cols="12" style="text-align:center;">
-                     <v-checkbox
-                        class="quanti"
-                        v-model="bio"
-                        label="Agriculture biologique"
-                        color="success"
-                        value="success"
-                        hide-details
-                      ></v-checkbox>
+                  <v-col cols="12" style="text-align: center">
+                    <v-checkbox
+                      class="quanti"
+                      v-model="bio"
+                      label="Agriculture biologique"
+                      color="success"
+                      value="success"
+                      hide-details
+                    ></v-checkbox>
                   </v-col>
                 </v-radio-group>
               </v-row>
@@ -468,10 +466,12 @@ export default {
     matieresecheModel: "",
   }),
 
-  date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-      menu: false,
-      modal: false,
-      menu2: false,
+  date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+    .toISOString()
+    .substr(0, 10),
+  menu: false,
+  modal: false,
+  menu2: false,
 
   // methods: {
   //     veriform(){
