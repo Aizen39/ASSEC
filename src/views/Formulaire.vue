@@ -10,75 +10,85 @@
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
-                  <h1>Périodes</h1>
+                  <h1>Période</h1>
                 </v-col>
               </v-row>
             </v-container>
 
-            <v-container>
-              <v-row>
-                <v-col cols="12" lg="6">
-                  <v-menu
-                    ref="menu1"
-                    v-model="menu1"
-                    :close-on-content-click="false"
-                    transition="scale-transition"
-                    offset-y
-                    max-width="290px"
-                    min-width="auto"
-                  >
-                    <template v-slot:activator="{ on, attrs }">
-                      <v-text-field
-                        v-model="dateFormatted"
-                        label="Date"
-                        hint="MM/DD/YYYY format"
-                        persistent-hint
-                        prepend-icon="mdi-calendar"
-                        v-bind="attrs"
-                        @blur="date = parseDate(dateFormatted)"
-                        v-on="on"
-                      ></v-text-field>
-                    </template>
-                    <v-date-picker
+            <v-row>
+              <v-col cols="6" sm="6" md="4">
+                <v-menu
+                  ref="menu"
+                  v-model="menu"
+                  :close-on-content-click="false"
+                  :return-value.sync="date"
+                  transition="scale-transition"
+                  offset-y
+                  min-width="auto"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
                       v-model="date"
-                      no-title
-                      @input="menu1 = false"
-                    ></v-date-picker>
-                  </v-menu>
+                      label="Date de début"
+                      placeholder="(JJ/MM/AAAA)"
+                      prepend-icon="mdi-calendar"
+                      readonly
+                      v-bind="attrs"
+                      v-on="on"
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker v-model="date" no-title scrollable>
+                    <v-spacer></v-spacer>
+                    <v-btn text color="primary" @click="menu = false">
+                      Cancel
+                    </v-btn>
+                    <v-btn text color="primary" @click="$refs.menu.save(date)">
+                      OK
+                    </v-btn>
+                  </v-date-picker>
+                </v-menu>
+              </v-col>
+
+              <v-spacer></v-spacer>
+              <v-col cols="6" sm="6" md="4">
+                <v-dialog
+                  ref="dialog"
+                  v-model="modal"
+                  :return-value.sync="date"
+                  persistent
+                  width="290px"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                      v-model="date"
+                      label="Date de fin"
+                      placeholder="(JJ/MM/AAAA)"
+                      prepend-icon="mdi-calendar"
+                      readonly
+                      v-bind="attrs"
+                      v-on="on"
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker v-model="date" scrollable>
+                    <v-spacer></v-spacer>
+                    <v-btn text color="primary" @click="modal = false">
+                      Cancel
+                    </v-btn>
+                    <v-btn
+                      text
+                      color="primary"
+                      @click="$refs.dialog.save(date)"
+                    >
+                      OK
+                    </v-btn>
+                  </v-date-picker>
+                </v-dialog>
+              </v-col>
+
               
-                </v-col>
+              
+            </v-row>
 
-                <v-col cols="12" lg="6">
-                  <v-menu
-                    v-model="menu2"
-                    :close-on-content-click="false"
-                    transition="scale-transition"
-                    offset-y
-                    max-width="290px"
-                    min-width="auto"
-                  >
-                    <template v-slot:activator="{ on, attrs }">
-                      <v-text-field
-                        v-model="computedDateFormatted"
-                        label="Date (read only text field)"
-                        hint="MM/DD/YYYY format"
-                        persistent-hint
-                        prepend-icon="mdi-calendar"
-                        readonly
-                        v-bind="attrs"
-                        v-on="on"
-                      ></v-text-field>
-                    </template>
-                    <v-date-picker
-                      v-model="date"
-                      no-title
-                      @input="menu2 = false"
-                    ></v-date-picker>
-                  </v-menu>
-                 
-                </v-col>
-              </v-row>
-            </v-container>
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
@@ -101,7 +111,7 @@
 
                 <v-col cols="12" sm="6">
                   <v-text-field
-                    label="Taureaux et génisses"
+                    label="Taureaux et génisses > 2 ans"
                     placeholder="Veuillez tapez le nombre"
                     outlined
                     dense
@@ -114,7 +124,7 @@
               <v-row>
                 <v-col cols="12" sm="6">
                   <v-text-field
-                    label="Génisses"
+                    label="Génisses entre 1 et 2 ans"
                     placeholder="Veuillez tapez le nombre"
                     outlined
                     dense
@@ -257,7 +267,7 @@
                 <v-col cols="12" sm="6">
                   <v-text-field
                     label="Superfice du terrain"
-                    suffix="m2"
+                    suffix="ha"
                     outlined
                     dense
                   ></v-text-field>
@@ -273,17 +283,15 @@
                 </v-col>
 
                 <v-radio-group v-model="row" row>
-                  <v-col cols="6">
-                    <v-radio
-                      label="Agriculture biologique"
-                      value="radio-1"
-                    ></v-radio>
-                  </v-col>
-                  <v-col cols="6">
-                    <v-radio
-                      label="Agriculture non biologique"
-                      value="radio-2"
-                    ></v-radio>
+                  <v-col cols="12" style="text-align:center;">
+                     <v-checkbox
+                        class="quanti"
+                        v-model="bio"
+                        label="Agriculture biologique"
+                        color="success"
+                        value="success"
+                        hide-details
+                      ></v-checkbox>
                   </v-col>
                 </v-radio-group>
               </v-row>
@@ -412,7 +420,7 @@
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
-                  <h2>Objectif de production journalière :</h2>
+                  <h2>Production journalière moyenne :</h2>
                 </v-col>
 
                 <v-col cols="12" sm="6">
@@ -441,9 +449,9 @@ export default {
       temp: (value) =>
         value < 25 || "La température ne doit pas être supérieure 25°C",
     },
-    
-    
 
+    menu1: false,
+    menu2: false,
     textarea: false,
     eauprofond: false,
     captage: false,
@@ -459,6 +467,11 @@ export default {
     secheingereeModel: "",
     matieresecheModel: "",
   }),
+
+  date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+      menu: false,
+      modal: false,
+      menu2: false,
 
   // methods: {
   //     veriform(){
