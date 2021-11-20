@@ -52,4 +52,12 @@ export default {
   color: white;
   margin-left: 4px;
 }
+
+@media screen and (max-width: 440px) {
+  h1{
+    font-size: 16px;
+  }
+}
+
+
 </style>

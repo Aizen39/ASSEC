@@ -12,10 +12,6 @@
       >
         {{ link }}
       </v-btn>
-      <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
-        Created By <strong>SushiTeam</strong> ©{{ new Date().getFullYear() }} —
-        All rights reserved
-      </v-col>
     </v-row>
   </v-footer>
 </template>
