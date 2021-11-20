@@ -1,11 +1,11 @@
 <template>
-    <v-layout>
+    <div>
         <TypeRessourceReco/>
         <VigilanceReco />
         <DisponibiliteReco />
         <SanitaireReco />
         <ClimatReco />
-    </v-layout>
+    </div>
 </template>
 
 <script>
