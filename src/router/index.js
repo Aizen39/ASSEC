@@ -21,6 +21,12 @@ const routes = [
     name: 'ForgotPassword',
     component: () => import(/* webpackChunkName: "ForgotPassword" */ '../views/ForgotPassword.vue')
   },
+
+  {
+    path: '/formulaire',
+    name: 'Formulaire',
+    component: () => import(/* webpackChunkName: "ForgotPassword" */ '../views/Formulaire.vue')
+  },
 ]
 
 const router = new VueRouter({
