@@ -25,7 +25,12 @@ const routes = [
   {
     path: '/formulaire',
     name: 'Formulaire',
-    component: () => import(/* webpackChunkName: "ForgotPassword" */ '../views/Formulaire.vue')
+    component: () => import(/* webpackChunkName: "Formulaire" */ '../views/Formulaire.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'DashBoard',
+    component: () => import(/* webpackChunkName: "DashBoard" */ '../views/DashBoard.vue')
   },
 ]
 
