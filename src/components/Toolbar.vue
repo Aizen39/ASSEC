@@ -15,6 +15,16 @@
 
     <v-spacer></v-spacer>
 
+    <div class="menu">
+        <span class="link mr-2">Tableau de bord</span>
+        <span class="link mr-2">Mes informations</span>
+        <span class="link mr-2">Mes recommandations</span>
+        <span class="link mr-2">Prévisionnel</span>
+
+    </div>
+
+    <v-spacer></v-spacer>
+
     <div>
       <router-link to="/login">
         <span class="login mr-2">Se connecter</span
@@ -59,5 +69,18 @@ export default {
   }
 }
 
+.menu{
+  margin-top: 50px;
+  margin-bottom: 15px;
+  
+}
+.link{
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.link:hover {
+   border-color: red; 
+}
 
 </style>

@@ -24,14 +24,16 @@
 </template>
 
 <script>
-import Toolbar from "./components/Toolbar.vue";
+import Toolbar from "./components/Toolbar";
 import Home from "./components/Home";
+
 import HomeConsoEau from './components/homeConsoEau.vue';
 import HomeElevage from './components/homeElevage.vue';
 import HomeGestionRessource from './components/homeGestionRessource.vue';
 import HomeSecheresse from './components/homeSecheresse.vue';
 import HomeBio from './components/homeBio.vue';
 import Footer from "./components/Footer.vue";
+
 
 export default {
   name: "App",

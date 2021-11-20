@@ -16,6 +16,7 @@
       <v-col cols="12" class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">Bienvenue sur Mon élevage</h1>
 
+
         <p class="subheading font-weight-regular">please join our online</p>
       </v-col>
     </v-row>
