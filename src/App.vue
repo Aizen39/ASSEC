@@ -5,7 +5,6 @@
     <v-main>
       <v-container fluid fill-height class="pa-0">
         <Home v-if="homePage()"/>
-        
         <HomeConsoEau v-if="homePage()"/>
         <HomeElevage v-if="homePage()"/>
         <HomeGestionRessource v-if="homePage()"/>
