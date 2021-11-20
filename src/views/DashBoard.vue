@@ -1,44 +1,162 @@
 <template>
   <v-layout>
     <v-flex>
-      <v-row justify="center">
-        <h1>Tableau de bord</h1>
-      </v-row>
-      <v-row justify="space-around">
+      <v-col cols="6" style="margin: auto">
+        <v-card
+          class="justify-center"
+          style="margin: 50px; background-color: #757575; color: white"
+        >
+          <v-card-title class="justify-center">Tableau de bord</v-card-title>
+        </v-card>
+      </v-col>
+
+      <!-- <v-row justify="space-around">
         <v-col>
           <p>Effectif Total : 467</p>
         </v-col>
         <v-col>
           <p>Comsommation d'eau : 105 m3</p>
         </v-col>
-      </v-row>
+      </v-row> -->
       <v-row>
         <v-col cols="6">
-          <v-card 
-          elevation="2" 
-          shaped>
-          <v-card-title>
-            Évaluation des sources disponibles sur l'exploitation de l'eau
-          </v-card-title>
-          <v-card-subtitle>
-            <p>Réglementation déclaration fonction des prélèvements</p>
-          </v-card-subtitle>
+          <v-card
+            elevation="2"
+            shaped
+            class="vcard"
+            style="width: 60%; margin-left: 35%"
+          >
+            <v-toolbar color="#f39200">
+              <v-card-title style="color: black"
+                >Volume d'eau à optimiser : 980m3</v-card-title
+              >
+            </v-toolbar>
+
+            <v-card-subtitle>
+              <p>Réglementation déclaration fonction des prélèvements</p>
+              <p>Filtration et traitement obligatoire</p>
+              <p>Vigilance sanitaire</p>
+            </v-card-subtitle>
+
+            <v-row justify="center">
+              <v-dialog v-model="analyse" persistent max-width="600px">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn color="#25a856" dark v-bind="attrs" v-on="on">
+                    En savoir plus
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-container>
+                    <v-img
+                      :src="require('../assets/Analyse_.png')"
+                      class="my-3"
+                      contain
+                      height="200%"
+                    />
+                  </v-container>
+
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" text @click="analyse = false">
+                      Close
+                    </v-btn>
+                    <!-- <v-btn color="blue darken-1" text @click="dialog = false">
+                      Save
+                    </v-btn> -->
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-row>
           </v-card>
-          <!-- <v-img
-          :src="require('../assets/Courbe1.png')"
-          class="my-3"
-          contain
-          height="200"
-        /> -->
-          <v-img
-          :src="require('../assets/Analyse.png')"
-          class="my-3"
-          contain
-          height="200"
-        />
+
+          <v-card
+            elevation="2"
+            shaped
+            class="vcard"
+            style="width: 60%; margin-left: 70%; margin-top: 60px"
+          >
+            <v-toolbar color="#f39200">
+              <v-card-title style="color: white"> </v-card-title>
+            </v-toolbar>
+
+            <v-card-subtitle>
+              <p></p>
+              <p></p>
+              <p></p>
+            </v-card-subtitle>
+
+            <v-row justify="center">
+              <v-dialog v-model="mdr" persistent max-width="600px">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn color="#25a856" dark v-bind="attrs" v-on="on">
+                    En savoir plus
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-container> </v-container>
+
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" text @click="mdr = false">
+                      Close
+                    </v-btn>
+                    <!-- <v-btn color="blue darken-1" text @click="dialog = false">
+                      Save
+                    </v-btn> -->
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-row>
+          </v-card>
+        </v-col>
+
+        <v-col cols="6">
+          <v-card
+            elevation="2"
+            shaped
+            class="vcard"
+            style="width: 60%; margin-right: 30%"
+          >
+            <v-toolbar color="#f39200">
+              <v-card-title style="color: white"> </v-card-title>
+            </v-toolbar>
+
+            <v-card-subtitle>
+              <p></p>
+              <p></p>
+              <p></p>
+            </v-card-subtitle>
+            <v-row justify="center">
+              <v-dialog v-model="courbe" persistent max-width="600px">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn color="#25a856" dark v-bind="attrs" v-on="on">
+                    En savoir plus
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-container>
+                    <v-img
+                      :src="require('../assets/Courbe1.png')"
+                      class="my-3"
+                      contain
+                      height="200%"
+                    />
+                  </v-container>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" text @click="courbe = false">
+                      Close
+                    </v-btn>
+                    <!-- <v-btn color="blue darken-1" text @click="dialog = false">
+                      Save
+                    </v-btn> -->
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-row>
+          </v-card>
         </v-col>
       </v-row>
-      <v-card elevation="2"></v-card>
     </v-flex>
   </v-layout>
 </template>
@@ -46,6 +164,12 @@
 <script>
 export default {
   name: "DashBoard",
+
+  data: () => ({
+    analyse: false,
+    courbe: false,
+    mdr: false,
+  }),
 };
 </script>
 
