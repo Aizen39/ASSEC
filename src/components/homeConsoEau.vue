@@ -1,8 +1,20 @@
 <template>
     <v-container>
-        <h1>Réduire votre consommation d'eau :</h1>
-        <p>adapter votre consommation d'eau à vos besoins</p>
-        <p>prévoir les risque sanitaire</p>
+        <v-row>
+            <v-col cols="7">
+                <h1>Réduire votre consommation d'eau</h1>
+                <p>Adapter votre <span class="text-important">consommation d'eau</span> à vos besoins</p>
+                <p>Prévoir les <span class="text-important">risque sanitaire</span></p>
+            </v-col>
+            <v-col cols="5">
+                <v-img
+                    :src="require('../assets/Logos-Pictos/Pictos/Pictogrammes_eau.png')"
+                    class="my-3"
+                    contain
+                    height="200"
+                />
+            </v-col>
+        </v-row>
     </v-container>
     
 </template>
@@ -14,3 +26,10 @@ export default ({
       
 })
 </script>
+
+<style>
+.text-important{
+    color: #f39200;
+    font-weight: bold;
+}
+</style>

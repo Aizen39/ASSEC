@@ -1,15 +1,8 @@
 <template>
   <v-app-bar app color="#1155A3" dark>
     <div class="d-flex align-center">
-      <!-- <v-img
-        alt="Vuetify Logo"
-        class="shrink mr-2"
-        contain
-        :src="require('../assets/logoMicro.png')"
-        transition="scale-transition"
-        width="40"
-      /> -->
-      <h1>Mon élevage</h1>
+   
+      <h1>Agr'eau Durable</h1>
 
     </div>
 
@@ -67,12 +60,6 @@ export default {
   h1{
     font-size: 16px;
   }
-}
-
-.menu{
-  margin-top: 50px;
-  margin-bottom: 15px;
-  
 }
 .link{
   font-size: 18px;
