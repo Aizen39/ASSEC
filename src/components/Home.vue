@@ -16,15 +16,34 @@
     </v-row>
 
     <v-row style="text-align: center;">
-      <v-col cols="12" class="mb-4">
+      <v-col cols="4">
+        <v-img
+          :src="require('../assets/btlLait.png')"
+          class="my-3"
+          contain
+          height="200"
+        />
+      </v-col>
+      <v-col cols="4" class="mb-4">
         <v-img
           :src="require('../assets/vache.jpg')"
           class="my-3"
           contain
           height="200"
         />
-        <p class="subheading font-weight-regular">please join our online</p>
       </v-col>
+      <v-col cols="4">
+        <v-img
+          :src="require('../assets/abreuvoir.jpg')"
+          class="my-3"
+          contain
+          height="200"
+        />
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <p class="text-solution-home">Solutions et ressources en élevage face au changement climatique</p>
     </v-row>
 
     <v-row>
@@ -53,5 +72,10 @@ export default {
 .logo .logo-img{
   width: 40vh;
   margin: auto;
+}
+.text-solution-home{
+  margin: auto;
+  color: #f39200;
+    font-weight: bold;
 }
 </style>
