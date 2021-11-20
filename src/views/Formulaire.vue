@@ -7,53 +7,52 @@
             <v-toolbar-title>Formulaire d'évaluation</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
-            <v-autocomplete
-              class="stade"
-              v-model="stadeModel"
-              :items="items"
-              outlined
-              dense
-              chips
-              small-chips
-              label="Stade physiologique"
-              multiple
-            ></v-autocomplete>
-
-            <v-text-field
-              class="poidsAnimal"
-              v-model="poidsModel"
-              label="Poids animal"
-              suffix="kg"
-              counter
-              maxlength="3"
-              outlined
-              dense
-            ></v-text-field>
-
-            <v-text-field
-              class="prodLait"
-              v-model="prodModel"
-              label="Objectifs de production laitière"
-              outlined
-              dense
-            ></v-text-field>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <h1>Élevage</h1>
+                </v-col>
+              </v-row>
+            </v-container>
 
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
-
                   <v-text-field
                     v-model="champModel"
-                    label="Nombre de jours au champ"
+                    label="Vaches"
+                    placeholder="Veuillez tapez le nombre"
                     outlined
                     dense
                   ></v-text-field>
                 </v-col>
 
                 <v-col cols="12" sm="6">
-
                   <v-text-field
-                    label="Nombre de jours en bâtiment"
+                    label="Taureaux et génisses"
+                    placeholder="Veuillez tapez le nombre"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Génisses"
+                    placeholder="Veuillez tapez le nombre"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Femelles inférieur à 12 mois"
+                    placeholder="Veuillez tapez le nombre"
                     v-model="batModel"
                     outlined
                     dense
@@ -62,40 +61,258 @@
               </v-row>
             </v-container>
 
-            <v-text-field
-              label="Proportion de fourrage"
-              v-model="fourrageModel"
-              outlined
-              dense
-            ></v-text-field>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Veaux"
+                    placeholder="Veuillez tapez le nombre"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
 
-            <v-text-field
-              label="Matière sèche ingérée"
-              v-model="secheingereeModel"
-              outlined
-              dense
-            ></v-text-field>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Poids moyen"
+                    placeholder="Veuillez tapez le nombre"
+                    suffix="kg"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
 
-            <v-text-field
-        
-              label="Pourcentage matière sèche dans la ration"
-              v-model="matieresecheModel"
-              suffix="%"
-              outlined
-              dense
-            ></v-text-field>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Nombre de jours au champs"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
 
-            <v-text-field
-            
-              :rules="[rules.required, rules.temp]"
-              label="Température extérieure"
-              suffix="°C"
-              outlined
-              dense
-            ></v-text-field>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Nombre de jours en bâtiment"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <h1>Alimentation</h1>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Proportion de fourrage"
+                    placeholder="Veuillez saisir un nombre"
+                    suffix="%"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Matière sèche ingérée"
+                    suffix="kg"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <h1>Exploitation</h1>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Superfice du terrain"
+                    suffix="m2"
+                    outlined
+                    dense
+                  ></v-text-field>
+                 </v-col>
+                                               
+                  
+           
+
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Superficie des toits"
+                    suffix="m2"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+
+                <v-radio-group v-model="row" row>
+                    <v-col cols="6"> 
+                    <v-radio label="Agriculture biologique" value="radio-1"></v-radio>
+                    </v-col>
+                    <v-col cols="6">
+                    <v-radio label="Agriculture non biologique" value="radio-2"></v-radio>
+                  </v-col>
+
+
+                  </v-radio-group>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <h1>Type de ressources</h1>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-card flat>
+              <v-card-text>
+                <v-container fluid>
+                  <v-row>
+                    <v-col cols="12" sm="4" md="4">
+                      <v-checkbox
+                        class="quanti"
+                        v-model="textarea"
+                        label="Récupération eaux de pluie"
+                        color="success"
+                        hide-details
+                      ></v-checkbox>
+
+                      <v-text-field
+                        class="quantity"
+                        v-if="textarea"
+                        label="Quantité"
+                        suffix="m3"
+                        dense
+                      ></v-text-field>
+
+                      <v-checkbox
+                        class="quanti"
+                        v-model="eauprofond"
+                        label="Eaux de profondeur: puits, forages, sources"
+                        color="success"
+                        value="success"
+                        hide-details
+                      ></v-checkbox>
+
+                      <v-text-field
+                        class="quantity"
+                        v-if="eauprofond"
+                        label="Quantité"
+                        suffix="m3"
+                        dense
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="4" md="4">
+                      <v-checkbox
+                        class="quanti"
+                        v-model="captage"
+                        label="Captages de sources et prélèvements cours d'eau"
+                        color="success"
+                        value="success"
+                        hide-details
+                      ></v-checkbox>
+
+                      <v-text-field
+                        class="quantity"
+                        v-if="captage"
+                        label="Quantité"
+                        suffix="m3"
+                        dense
+                      ></v-text-field>
+
+                      <v-checkbox
+                        class="quanti"
+                        v-model="retenues"
+                        label="Retenues"
+                        color="success"
+                        value="success"
+                        hide-details
+                      ></v-checkbox>
+
+                      <v-text-field
+                        class="quantity"
+                        v-if="retenues"
+                        label="Quantité"
+                        suffix="m3"
+                        dense
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="4" md="4">
+                      <v-checkbox
+                        class="quanti"
+                        v-model="EAP"
+                        label="Prélèvements sur réseau eau potable"
+                        color="success"
+                        value="success"
+                        hide-details
+                      ></v-checkbox>
+
+                      <v-text-field
+                        class="quantity"
+                        v-if="EAP"
+                        label="Quantité"
+                        suffix="m3"
+                        dense
+                      ></v-text-field>
+
+                      <v-checkbox
+                        class="quanti"
+                        v-model="etangs"
+                        label="Eaux stagnantes, mares et étangs"
+                        color="success"
+                        value="success"
+                        hide-details
+                      ></v-checkbox>
+
+                      <v-text-field
+                        class="quantity"
+                        v-if="etangs"
+                        label="Quantité"
+                        suffix="m3"
+                        dense
+                      ></v-text-field>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-card-text>
+            </v-card>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <h2>Objectifs de production laitière :</h2>
+                </v-col>
+
+                <v-col cols="12" sm="6">
+                  <v-text-field outlined dense></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
 
             <div class="text-center">
-              <v-btn @click="submit" color="success" dark> VISUALISER </v-btn>
+              <v-btn @click="submit" color="success" dark> Enregistrer </v-btn>
             </div>
           </v-card-text>
         </v-card>
@@ -114,25 +331,30 @@ export default {
       temp: (value) =>
         value < 25 || "La température ne doit pas être supérieure 25°C",
     },
-    
-    stadeModel: '',
-    poidsModel:'',
-    prodModel:'',
-    champModel:'',
-    batModel:'',
-    fourrageModel:'',
-    secheingereeModel:'',
-    matieresecheModel:'',
 
+    textarea: false,
+    eauprofond: false,
+    captage: false,
+    retenues: false,
+    EAP: false,
+    etangs: false,
+    stadeModel: "",
+    poidsModel: "",
+    prodModel: "",
+    champModel: "",
+    batModel: "",
+    fourrageModel: "",
+    secheingereeModel: "",
+    matieresecheModel: "",
   }),
 
-  methods: {
-      veriform(){
-        if(this.stadeModel == '' || this.poidsModel == '' || this.prodModel == ''|| this.champModel== '' || this.batModel=='' || this.fourrageModel=='' || this.secheingereeModel=='' || this.matieresecheModel==''){
-          alert('un champs non rempli');
-        }
-      }
-    },
+  // methods: {
+  //     veriform(){
+  //       if(this.stadeModel == '' || this.poidsModel == '' || this.prodModel == ''|| this.champModel== '' || this.batModel=='' || this.fourrageModel=='' || this.secheingereeModel=='' || this.matieresecheModel==''){
+  //         alert('un champs non rempli');
+  //       }
+  //     }
+  //   },
 };
 </script>
 
@@ -144,7 +366,10 @@ export default {
 }
 
 .formstyle {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
+}
+
+.quanti {
+  margin-bottom: 10px;
 }
 </style>
