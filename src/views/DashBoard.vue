@@ -87,11 +87,7 @@
 
             <v-row justify="center">
               <v-dialog v-model="mdr" persistent max-width="600px">
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn color="#25a856" dark v-bind="attrs" v-on="on">
-                    En savoir plus
-                  </v-btn>
-                </template>
+                
                 <v-card>
                   <v-container> </v-container>
 
@@ -118,13 +114,14 @@
             style="width: 60%; margin-right: 30%"
           >
             <v-toolbar color="#f39200">
-              <v-card-title style="color: white"> </v-card-title>
+              <v-card-title style="color: black">
+                Moyenne matière sèche ingérée / Eau bue par vache et par jour : 21kg / 55L
+                 </v-card-title>
             </v-toolbar>
-
             <v-card-subtitle>
-              <p></p>
-              <p></p>
-              <p></p>
+              <p>Surveillance propreté</p>
+              <p>Zone pas ou peu électromagnétisme</p>
+              <p>Température de l'eau inférieur à 15°C</p>
             </v-card-subtitle>
             <v-row justify="center">
               <v-dialog v-model="courbe" persistent max-width="600px">
@@ -136,7 +133,7 @@
                 <v-card>
                   <v-container>
                     <v-img
-                      :src="require('../assets/Courbe1.png')"
+                      :src="require('../assets/graphique.png')"
                       class="my-3"
                       contain
                       height="200%"
