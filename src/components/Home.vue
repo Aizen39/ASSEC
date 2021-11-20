@@ -6,6 +6,8 @@
           alt="assecc logo"
           class="logo-img"
           :src="require('../assets/Logos-Pictos/ASSECC-VF.png')"
+          contain
+          height="150"
         ></v-img>
       </v-col>
       <v-col cols="6" class="logo">
@@ -13,6 +15,8 @@
           alt="crabfc logo"
           class="logo-img"
           :src="require('../assets/Logos-Pictos/Logo_CRABFC-S-VF.png')"
+          contain
+          height="200"
         ></v-img>
       </v-col>
     </v-row>
