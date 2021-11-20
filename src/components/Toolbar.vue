@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="primary" dark>
+  <v-app-bar app color="#1155A3" dark>
     <div class="d-flex align-center">
    
       <h1>Agr'eau Durable</h1>
