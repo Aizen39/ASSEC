@@ -3,7 +3,7 @@
     <v-flex xs12 sm8 md4>
       <v-form ref="form" @submit="veriform">
         <v-card class="elevation-8">
-          <v-toolbar dark color="primary">
+          <v-toolbar dark color="#1155A3">
             <v-toolbar-title>Formulaire d'évaluation</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
@@ -138,6 +138,43 @@
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Matière sèche ration humide"
+                    placeholder="Veuillez saisir un nombre"
+                    suffix="%"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Matière sèche ration fourrage sec"
+                    suffix="%"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    label="Matière sèche ration pâture"
+                    placeholder="Veuillez saisir un nombre"
+                    suffix="%"
+                    outlined
+                    dense
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
+
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6">
                   <h1>Exploitation</h1>
                 </v-col>
               </v-row>
@@ -152,10 +189,7 @@
                     outlined
                     dense
                   ></v-text-field>
-                 </v-col>
-                                               
-                  
-           
+                </v-col>
 
                 <v-col cols="12" sm="6">
                   <v-text-field
@@ -167,15 +201,19 @@
                 </v-col>
 
                 <v-radio-group v-model="row" row>
-                    <v-col cols="6"> 
-                    <v-radio label="Agriculture biologique" value="radio-1"></v-radio>
-                    </v-col>
-                    <v-col cols="6">
-                    <v-radio label="Agriculture non biologique" value="radio-2"></v-radio>
+                  <v-col cols="6">
+                    <v-radio
+                      label="Agriculture biologique"
+                      value="radio-1"
+                    ></v-radio>
                   </v-col>
-
-
-                  </v-radio-group>
+                  <v-col cols="6">
+                    <v-radio
+                      label="Agriculture non biologique"
+                      value="radio-2"
+                    ></v-radio>
+                  </v-col>
+                </v-radio-group>
               </v-row>
             </v-container>
 
@@ -230,7 +268,7 @@
                         class="quanti"
                         v-model="captage"
                         label="Captages de sources et prélèvements cours d'eau"
-                        color="success"
+                        color="#25a856"
                         value="success"
                         hide-details
                       ></v-checkbox>
@@ -302,17 +340,22 @@
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
-                  <h2>Objectifs de production laitière :</h2>
+                  <h2>Objectif de production journalière :</h2>
                 </v-col>
 
                 <v-col cols="12" sm="6">
-                  <v-text-field outlined dense></v-text-field>
+                  <v-text-field 
+                  outlined 
+                  dense
+                  suffix="L/jour"
+                  > 
+                  </v-text-field>
                 </v-col>
               </v-row>
             </v-container>
 
             <div class="text-center">
-              <v-btn @click="submit" color="success" dark> Enregistrer </v-btn>
+              <v-btn @click="submit" color="#25a856" dark> Enregistrer </v-btn>
             </div>
           </v-card-text>
         </v-card>
