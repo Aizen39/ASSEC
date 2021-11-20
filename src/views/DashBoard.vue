@@ -2,9 +2,7 @@
   <v-layout>
     <v-flex>
       <v-row justify="center">
-        <h1>
-          Tableau de bord
-        </h1>
+        <h1>Tableau de bord</h1>
       </v-row>
       <v-row justify="space-around">
         <v-col>
@@ -16,20 +14,31 @@
       </v-row>
       <v-row>
         <v-col cols="6">
-        <v-img
+          <v-card 
+          elevation="2" 
+          shaped>
+          <v-card-title>
+            Évaluation des sources disponibles sur l'exploitation de l'eau
+          </v-card-title>
+          <v-card-subtitle>
+            <p>Réglementation déclaration fonction des prélèvements</p>
+          </v-card-subtitle>
+          </v-card>
+          <!-- <v-img
           :src="require('../assets/Courbe1.png')"
           class="my-3"
           contain
           height="200"
-        />
-        <v-img
+        /> -->
+          <v-img
           :src="require('../assets/Analyse.png')"
           class="my-3"
           contain
           height="200"
         />
-      </v-col>
+        </v-col>
       </v-row>
+      <v-card elevation="2"></v-card>
     </v-flex>
   </v-layout>
 </template>

@@ -1,7 +1,7 @@
 <template>
-  <v-footer app color="primary" dark padless>
+  <v-footer app color="#1155A3" >
     <v-row justify="center" no-gutters>
-      <v-col class="primary py-4 text-center white--text" cols="12">
+      <v-col class="py-4 text-center white--text" cols="12">
         Created By <strong>SushiTeam</strong> ©{{ new Date().getFullYear() }} —
         All rights reserved
       </v-col>
