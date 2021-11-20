@@ -5,16 +5,16 @@
     <v-main>
       <v-container fluid fill-height class="pa-0">
         <Home v-if="homePage()"/>
-        <hr/>
-        <HomeConsoEau />
-        <hr/>
-        <HomeElevage />
-        <hr/>
-        <HomeGestionRessource />
-        <hr/>
-        <HomeSecheresse />
-        <hr/>
-        <HomeBio />
+        <hr v-if="homePage()"/>
+        <HomeConsoEau v-if="homePage()"/>
+        <hr v-if="homePage()"/>
+        <HomeElevage v-if="homePage()"/>
+        <hr v-if="homePage()"/>
+        <HomeGestionRessource v-if="homePage()"/>
+        <hr v-if="homePage()"/>
+        <HomeSecheresse v-if="homePage()"/>
+        <hr v-if="homePage()"/>
+        <HomeBio v-if="homePage()"/>
         <router-view></router-view>
       </v-container>
     </v-main>
