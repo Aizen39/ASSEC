@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import Toolbar from "./components/Toolbar.vue";
+import Toolbar from "./components/Toolbar";
 import Home from "./components/Home";
-import Footer from "./components/Footer.vue";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
