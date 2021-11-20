@@ -4,7 +4,7 @@
             <v-col cols="7">
                 <h1>Evaluer vos ressources en eau disponible</h1> 
                 <p><span class="text-important">Optimiser l'exploitation</span> de vos ressources</p>
-                <p>Choisir des <span class="text-important">système appropriés</span></p>
+                <p>Choisir des <span class="text-important">systèmes appropriés</span></p>
 
             </v-col>
             <v-col cols="5">

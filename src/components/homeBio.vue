@@ -2,9 +2,9 @@
     <v-container>
         <v-row>
             <v-col>
-                <h1>Utilisation ou non du bio </h1>   
-                <p>Prise en charge de votre élevage <span class="text-important">biologique ou non biologique</span></p>
-                <p>Adapter vos besoins en fonction de <span class="text-important">votre mode d'élevage</span></p>
+                <h1>S'assurer de votre conformité sanitaire </h1>   
+                <p>Suivre l'évolution <span class="text-important">des normes sanitaires</span></p>
+                <p>Vérifier votre éligibilité <span class="text-important">aux différents dispositifs d'aide</span></p>
             </v-col>
             <v-col>
                 <v-img

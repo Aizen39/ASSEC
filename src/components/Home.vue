@@ -11,7 +11,7 @@
 
     <v-row class="text-center">
       <v-col cols="12">
-        <h1 class="display-2 font-weight-bold mb-3">Bienvenue sur Mon élevage</h1>
+        <h1 class="display-2 font-weight-bold mb-3">Bienvenue sur Agr'eau Durable</h1>
       </v-col>
     </v-row>
 
@@ -23,7 +23,9 @@
           contain
           height="200"
         />
-        <p class="subheading font-weight-regular">please join our online</p>
+        <p class="subheading font-weight-regular">Solutions et ressources en élevage face au changement climatique.</p>
+        <p class="subheading font-weight-regular">Pour assurer performances, santé, bien-être, il est nécessaire de garantir un abreuvement suffisant</p>
+        <p class="subheading font-weight-regular">et de qualité. Agr'eau durable est la solution qui vous permet de maîtriser votre consommation d'eau.</p>
       </v-col>
     </v-row>
 
@@ -42,7 +44,11 @@
 export default {
   name: "HelloWorld",
 
-  data: () => ({}),
+  data(){
+    return{
+
+    }
+  },
 };
 </script>
 

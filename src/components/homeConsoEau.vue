@@ -4,7 +4,7 @@
             <v-col cols="7">
                 <h1>Réduire votre consommation d'eau</h1>
                 <p>Adapter votre <span class="text-important">consommation d'eau</span> à vos besoins</p>
-                <p>Prévoir les <span class="text-important">risque sanitaire</span></p>
+                <p>Prévoir les <span class="text-important">risques sanitaires</span></p>
             </v-col>
             <v-col cols="5">
                 <v-img
