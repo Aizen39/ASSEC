@@ -3,63 +3,131 @@
     <v-flex xs12 sm8 md4>
       <v-form ref="form" @submit.prevent="register">
         <v-card class="elevation-8">
-          <v-toolbar dark color="primary">
-            <v-toolbar-title>Sign Up</v-toolbar-title>
+          <v-toolbar dark color="#1155A3">
+            <v-toolbar-title>Inscription</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
+            <v-row
+              ><v-col>
+                <v-text-field
+                  prepend-icon="mdi-account"
+                  required
+                  :rules="[rules.login]"
+                  name="nom"
+                  label="Nom"
+                  type="text"
+                ></v-text-field> </v-col
+              ><v-col>
+                <v-text-field
+                  required
+                  :rules="[rules.login]"
+                  name="prenom"
+                  label="Prénom"
+                  type="text"
+                ></v-text-field> </v-col
+            ></v-row>
             <v-text-field
-              prepend-icon="mdi-account"
               required
               :rules="[rules.login]"
-              name="login"
-              label="Login"
+              name="raison"
+              label="Raison sociale"
               type="text"
-              v-model="login"
             ></v-text-field>
             <v-text-field
-              prepend-icon="mdi-email"
               required
-              :rules="[rules.validateEmail]"
-              name="Email"
-              label="Email"
-              type="mail"
-              v-model="email"
+              :rules="[rules.login]"
+              name="siret"
+              label="Siret"
+              type="text"
             ></v-text-field>
             <v-text-field
-              id="password"
-              prepend-icon="mdi-lock"
+              prepend-icon="mdi-post"
               required
-              :rules="[rules.pwd]"
-              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="show1 = !show1"
-              :type="show1 ? 'text' : 'password'"
-              name="password"
-              label="Password"
-              v-model="password"
+              :rules="[rules.login]"
+              name="adresse"
+              label="Adresse"
+              type="text"
             ></v-text-field>
-            <v-text-field
-              id="confirmPassword"
-              prepend-icon="mdi-lock-check"
-              required
-              :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="show2 = !show2"
-              :type="show2 ? 'text' : 'password'"
-              name="confirmPassword"
-              label="Confirm your password"
-              v-model="confirmPassword"
-            ></v-text-field>
+            <v-row
+              ><v-col>
+                <v-text-field
+                  prepend-icon="mdi-city"
+                  required
+                  :rules="[rules.login]"
+                  name="ville"
+                  label="Ville"
+                  type="text"
+                ></v-text-field> </v-col
+              ><v-col>
+                <v-text-field
+                  required
+                  :rules="[rules.login]"
+                  name="cp"
+                  label="Code postal"
+                  type="text"
+                ></v-text-field> </v-col
+            ></v-row>
+            <v-row
+              ><v-col>
+                <v-text-field
+                  prepend-icon="mdi-email"
+                  required
+                  :rules="[rules.validateEmail]"
+                  name="Email"
+                  label="Email"
+                  type="mail"
+                  v-model="email"
+                ></v-text-field> </v-col
+              ><v-col>
+                <v-text-field
+                  prepend-icon="mdi-phone"
+                  required
+                  :rules="[rules.login]"
+                  name="telephone"
+                  label="Téléphone"
+                  type="text"
+                ></v-text-field> </v-col
+            ></v-row>
+            <v-row
+              ><v-col>
+                <v-text-field
+                  id="password"
+                  prepend-icon="mdi-lock"
+                  required
+                  :rules="[rules.pwd]"
+                  :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                  @click:append="show1 = !show1"
+                  :type="show1 ? 'text' : 'password'"
+                  name="password"
+                  label="Mot de passe"
+                  v-model="password"
+                ></v-text-field> </v-col
+              ><v-col>
+                <v-text-field
+                  id="confirmPassword"
+                  prepend-icon="mdi-lock-check"
+                  required
+                  :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+                  @click:append="show2 = !show2"
+                  :type="show2 ? 'text' : 'password'"
+                  name="confirmPassword"
+                  label="Confirmer mon mot de passe"
+                  v-model="confirmPassword"
+                ></v-text-field> </v-col
+            ></v-row>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn
+              dark
               type="button"
-              color="primary"
+              color="#1155A3"
               elevation="3"
               @click="cleanForm()"
             >
-              Clear
+              Réinitialiser
             </v-btn>
-            <v-btn type="submit" color="primary" elevation="3"> Sign Up </v-btn>
+            <v-btn dark type="submit" color="#1155A3" elevation="3"> Valider </v-btn>
             <!-- to="/login" -->
           </v-card-actions>
         </v-card>
@@ -69,7 +137,6 @@
 </template>
 
 <script>
-
 export default {
   name: "Register",
   data() {
@@ -96,12 +163,8 @@ export default {
       },
     };
   },
-  mounted(){
-
-  },
-  methods: {
-    
-  }
+  mounted() {},
+  methods: {},
 };
 </script>
 

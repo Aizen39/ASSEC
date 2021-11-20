@@ -1,18 +1,18 @@
 <template>
   <v-app-bar app color="#1155A3" dark>
     <div class="d-flex align-center">
-   
-      <h1>Agr'eau Durable</h1>
-
+      
+      <router-link to="/"><h1 id="title" >Agr'eau Durable</h1></router-link>
+      
     </div>
 
     <v-spacer></v-spacer>
 
     <div class="menu">
-        <span class="link mr-2">Tableau de bord</span>
-        <span class="link mr-2">Mes informations</span>
-        <span class="link mr-2">Mes recommandations</span>
-        <span class="link mr-2">Prévisionnel</span>
+      <router-link to="/dashboard"><span class="link mr-2">Tableau de bord</span></router-link>
+      <router-link to="/formulaire"><span class="link mr-2">Mes informations</span></router-link>
+      <router-link to="/recommendation"><span class="link mr-2">Mes recommandations</span></router-link>
+      <router-link to="/dashboard"><span class="link mr-2">Prévisionnel</span></router-link>
 
     </div>
 
@@ -20,10 +20,10 @@
 
     <div>
       <router-link to="/login">
-        <span class="login mr-2">Se connecter</span
+        <span style='white-space: nowrap;' class="login mr-2">Se connecter</span
         ><span class="login mr-2">|</span></router-link
       ><router-link to="/register">
-        <span class="login mr-2">S'enregistrer</span>
+        <span style='white-space: nowrap;' class="login mr-2">S'enregistrer</span>
       </router-link>
     </div>
   </v-app-bar>
@@ -63,8 +63,19 @@ export default {
 }
 .link{
   font-size: 18px;
+  text-decoration: none;
+  color:white;
   margin-left: 20px;
 }
+
+#title{
+  font-size: 32px;
+  text-decoration: none;
+  color:white;
+  text-transform: none;
+  background-color:#1255A3 ;
+}
+
 
 .link:hover {
    border-color: red; 
