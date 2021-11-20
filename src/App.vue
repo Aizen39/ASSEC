@@ -5,16 +5,10 @@
     <v-main>
       <v-container fluid fill-height class="pa-0">
         <Home v-if="homePage()"/>
-        <hr/>
-        <HomeConsoEau />
-        <hr/>
-        <HomeElevage />
-        <hr/>
-        <HomeGestionRessource />
-        <hr/>
-        <HomeSecheresse />
-        <hr/>
-        <HomeBio />
+        <HomeConsoEau v-if="homePage()"/>
+        <HomeGestionRessource v-if="homePage()"/>
+        <HomeSecheresse v-if="homePage()"/>
+        <HomeBio v-if="homePage()"/>
         <router-view></router-view>
       </v-container>
     </v-main>
@@ -26,9 +20,7 @@
 <script>
 import Toolbar from "./components/Toolbar";
 import Home from "./components/Home";
-
 import HomeConsoEau from './components/homeConsoEau.vue';
-import HomeElevage from './components/homeElevage.vue';
 import HomeGestionRessource from './components/homeGestionRessource.vue';
 import HomeSecheresse from './components/homeSecheresse.vue';
 import HomeBio from './components/homeBio.vue';
@@ -41,7 +33,6 @@ export default {
   components: {
     Home,
     HomeConsoEau,
-    HomeElevage,
     HomeGestionRessource,
     HomeSecheresse,
     HomeBio,
