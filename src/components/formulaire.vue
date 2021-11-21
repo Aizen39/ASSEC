@@ -27,8 +27,8 @@
           outlined
         ></v-text-field>
 
-        <v-btn class="mr-4" @click="submit"> submit </v-btn>
-        <v-btn @click="clear"> clear </v-btn>
+        <v-btn class="mr-4" @click="submit" to="/dashboard"> Valider </v-btn>
+        <v-btn @click="clear"> Réinitialiser </v-btn>
       </v-form>
     </v-flex>
   </v-layout>
