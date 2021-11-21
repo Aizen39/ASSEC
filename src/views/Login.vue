@@ -28,7 +28,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn type="submit" color="primary" elevation="3"> Valider </v-btn>
+            <v-btn type="submit" color="#25a856" elevation="3" to="/formulaire"> Valider </v-btn>
             <!-- to="/project" -->
           </v-card-actions>
           <p class="forgotPassword text-right mt-2 mb-4">

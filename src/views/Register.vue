@@ -121,13 +121,14 @@
             <v-btn
               dark
               type="button"
-              color="#1155A3"
+              color="#f03a47"
               elevation="3"
               @click="cleanForm()"
+              
             >
               Réinitialiser
             </v-btn>
-            <v-btn dark type="submit" color="#1155A3" elevation="3"> Valider </v-btn>
+            <v-btn dark type="submit" color="#25a856" elevation="3" to="/login"> Valider </v-btn>
             <!-- to="/login" -->
           </v-card-actions>
         </v-card>

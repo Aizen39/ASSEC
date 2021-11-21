@@ -4,7 +4,7 @@
       <v-form ref="form" @submit="veriform">
         <v-card class="elevation-8">
           <v-toolbar dark color="#1155A3">
-            <v-toolbar-title>Formulaire d'évaluation</v-toolbar-title>
+            <v-toolbar-title>Informations d'évaluation</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             

@@ -2,7 +2,7 @@
   <div>
     <section>
         <v-row>
-            <h1 class="h1-style">Eaux de profondeur :</h1>
+            <h1 class="h1-style">Eaux de profondeur</h1>
         </v-row>
         <v-row>
             <v-col class="style-text" cols="12">
@@ -20,19 +20,19 @@
                 </p>
             </v-col>
             <v-col class="style-text" cols="12">
-                <h2>réglementation</h2>
+                <h2>Réglementation</h2>
                 <p>
-                Si Prélèvement &lt; 1000 m3/an, le forage est déclaré en mairie
-                <br />Si le prélèvement &gt; 1000 m3 : déclaration auprès de la
-                police de l'eau <br />Si profondeu &gt; 10m déclaration
+                Prélèvement &lt; 1000 m3/an : le forage doit être déclaré en mairie
+                <br />Prélèvement &gt; 1000 m3 : déclaration auprès de la
+                police de l'eau <br />Profondeur &gt; 10m : déclaration
                 obligatoire à la DREAL
                 </p>
             </v-col>
             <v-col class="style-text" cols="12">
                 <h2>Problèmes sanitaires</h2>
                 <p>
-                fer et manganèse <br />
-                conseil : une analyse par an et un traitement
+                Fer et manganèse <br />
+                Conseil : une analyse par an et un traitement
                 </p>
             </v-col>
             <v-col class="style-text" cols="12">
