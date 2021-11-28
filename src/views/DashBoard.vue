@@ -151,7 +151,7 @@
             elevation="2"
             shaped
             class="vcard"
-            style="width: 60%; margin-right: 30%"
+            style="width: 63%; margin-right: 30%"
           >
             <v-toolbar color="#f39200">
               <v-card-title style="color: black">
